@@ -48,14 +48,23 @@
   <article data-timings="">
     <ul>
 <li>The <strong>Simple Algebra Practice</strong> app allows you to practice solving a particular type of algebra problem: two equations with two unknowns</li>
-<li>Example problem:
+<li>Example problem: solve for \(x\) and \(y\)
 
 <ul>
-<li>3<em>x</em> + 2<em>y</em> = 12</li>
-<li>1<em>x</em> + -3<em>y</em> = -7</li>
-<li>Solve for <em>x</em> and <em>y</em></li>
+<li>\(3x + 2y = 12\)</li>
+<li>\(1x + -3y = -7\)</li>
 </ul></li>
+<li>Solution to example:</li>
 </ul>
+
+<pre><code class="r">## Solution to above example AND required embedded R code
+det_mtx &lt;- det(matrix(c(3,1,2,-3), nrow=2))
+det_x &lt;- det(matrix(c(12,-7,2,-3), nrow=2)); det_y &lt;- det(matrix(c(3,1,12,-7), nrow=2))
+paste0(&quot;x = &quot;, det_x / det_mtx, &quot; and y = &quot;, det_y / det_mtx)
+</code></pre>
+
+<pre><code>## [1] &quot;x = 2 and y = 3&quot;
+</code></pre>
 
   </article>
   <!-- Presenter Notes -->
@@ -83,8 +92,8 @@
   <article data-timings="">
     <ol>
 <li>Read the equations.</li>
-<li>Solve for the unknowns: <em>x</em> and <em>y</em>.</li>
-<li>Enter your proposed values for <em>x</em> and <em>y</em> in the input boxes.</li>
+<li>Solve for the unknowns: \(x\) and \(y\).</li>
+<li>Enter your proposed values for \(x\) and \(y\) in the input boxes.</li>
 <li>Press the &quot;Submit&quot; button.</li>
 <li>If your answers are correct, the app will tell you. If not, you&#39;ll get a second chance to solve.</li>
 </ol>
@@ -144,7 +153,21 @@
 </body>
   <!-- Load Javascripts for Widgets -->
   
-  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
   <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <!-- DONE LOADING HIGHLIGHTER JS FILES -->

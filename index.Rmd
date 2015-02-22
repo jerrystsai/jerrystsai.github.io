@@ -6,7 +6,7 @@ job         :
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
-widgets     : []            # {mathjax, quiz, bootstrap}
+widgets     : [mathjax]     # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
@@ -14,10 +14,16 @@ knit        : slidify::knit2slides
 ## What does this app do?
 
 + The **Simple Algebra Practice** app allows you to practice solving a particular type of algebra problem: two equations with two unknowns
-+ Example problem:
-  + 3*x* + 2*y* = 12
-  + 1*x* + -3*y* = -7
-  + Solve for *x* and *y*
++ Example problem: solve for $x$ and $y$
+  + $3x + 2y = 12$
+  + $1x + -3y = -7$
++ Solution to example:
+```{r solution_to_above_equations}
+## Solution to above example AND required embedded R code
+det_mtx <- det(matrix(c(3,1,2,-3), nrow=2))
+det_x <- det(matrix(c(12,-7,2,-3), nrow=2)); det_y <- det(matrix(c(3,1,12,-7), nrow=2))
+paste0("x = ", det_x / det_mtx, " and y = ", det_y / det_mtx)
+```
 
 --- 
 
@@ -32,8 +38,8 @@ knit        : slidify::knit2slides
 ## How do I play this app?
 
 1. Read the equations.
-2. Solve for the unknowns: *x* and *y*.
-3. Enter your proposed values for *x* and *y* in the input boxes.
+2. Solve for the unknowns: $x$ and $y$.
+3. Enter your proposed values for $x$ and $y$ in the input boxes.
 4. Press the "Submit" button.
 5. If your answers are correct, the app will tell you. If not, you'll get a second chance to solve.
 
