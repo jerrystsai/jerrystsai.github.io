@@ -47,6 +47,7 @@ paste0("x = ", det_x / det_mtx, " and y = ", det_y / det_mtx)
 
 ## I'm sold. Let me use the app!
 - Go to this URL: [http://jerrytsai.shinyapps.io/project](http://jerrytsai.shinyapps.io/project)
+- Go to the Github repository: [https://github.com/jerrystsai/DataProducts](https://github.com/jerrystsai/DataProducts)
 
 
 
